@@ -18,20 +18,22 @@ class SplashScreen extends StatelessWidget {
     final georgePositionBloc = context.read<GeorgePositionBloc>();
     final notiOverlayBloc = context.read<NotiOverlayBloc>();
 
-    return GameWidget(
-      game: MyGame(
-        friendNumberBloc: friendNumberBloc,
-        foodNumberBloc: foodNumberBloc,
-        georgePositionBloc: georgePositionBloc,
-          notiOverlayBloc:notiOverlayBloc,
-      ),
-      overlayBuilderMap: {
-        'OverlayController': (BuildContext context, MyGame game) {
-          return OverlayController(
-            game: game,
-          );
+    return Center(
+      child: GameWidget(
+        game: MyGame(
+          friendNumberBloc: friendNumberBloc,
+          foodNumberBloc: foodNumberBloc,
+          georgePositionBloc: georgePositionBloc,
+            notiOverlayBloc:notiOverlayBloc,
+        ),
+        overlayBuilderMap: {
+          'OverlayController': (BuildContext context, MyGame game) {
+            return OverlayController(
+              game: game,
+            );
+          },
         },
-      },
+      ),
     );
   }
 }
