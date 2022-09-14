@@ -2,10 +2,10 @@ import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:testtesttest/bloc/food_number_bloc/food_number_bloc.dart';
 import 'package:testtesttest/model/food_inventory_model.dart';
-import 'package:testtesttest/view/flame_animation.dart';
+import 'package:testtesttest/my_game.dart';
 
 class BakedGoodComponent extends SpriteComponent
-    with CollisionCallbacks, HasGameRef<FlameAnimation> {
+    with CollisionCallbacks, HasGameRef<MyGame> {
   final FoodNumberBloc foodNumberBloc;
   final String bakedGoodName;
   BakedGoodComponent({
@@ -20,11 +20,14 @@ class BakedGoodComponent extends SpriteComponent
   @override
   void onCollision(Set<Vector2> intersectionPoints, PositionComponent other) {
     super.onCollision(intersectionPoints, other);
+
     for(var foodName in FoodCategory.values){
       if('FoodCategory.$bakedGoodName' == foodName.toString()) {
         foodNumberBloc.add(FindFood(foodCategory: foodName));
       }
     }
+
+    gameRef.yummy.start();
     gameRef.remove(this);
   }
 }

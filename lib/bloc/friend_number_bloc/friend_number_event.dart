@@ -15,3 +15,30 @@ class FindFriend extends FriendNumberEvent {
     return FindFriend();
   }
 }
+
+class ResetFriend extends FriendNumberEvent {
+  ResetFriend();
+
+  @override
+  List<Object?> get props => [];
+
+  ResetFriend copyWith() {
+    return ResetFriend();
+  }
+}
+
+class AddFriend extends FriendNumberEvent {
+  final int id;
+  AddFriend({required this.id});
+
+  @override
+  List<Object?> get props => [];
+
+  AddFriend copyWith({
+    int? id,
+  }) {
+    return AddFriend(
+      id: id ?? this.id,
+    );
+  }
+}

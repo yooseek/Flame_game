@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.9" tiledversion="1.9.1" orientation="orthogonal" renderorder="right-down" width="88" height="50" tilewidth="16" tileheight="16" infinite="0" nextlayerid="4" nextobjectid="21">
+<map version="1.9" tiledversion="1.9.1" orientation="orthogonal" renderorder="right-down" width="88" height="50" tilewidth="16" tileheight="16" infinite="0" nextlayerid="5" nextobjectid="71">
  <tileset firstgid="1" name="background" tilewidth="16" tileheight="16" tilecount="4400" columns="88">
   <image source="../images/background.png" width="1408" height="800"/>
  </tileset>
@@ -32,6 +32,51 @@
   <object id="18" class="bread" x="1152" y="464" width="32" height="32"/>
   <object id="19" gid="4403" x="1152" y="498" width="32" height="32"/>
   <object id="20" gid="4403" x="531" y="176" width="32" height="32"/>
+ </objectgroup>
+ <objectgroup id="4" name="obstacles">
+  <object id="21" x="291.5" y="65.5" width="24" height="38.5"/>
+  <object id="23" x="116.667" y="432.667" width="21.3333" height="35.3333"/>
+  <object id="24" x="0" y="256" width="32" height="320"/>
+  <object id="25" x="0" y="0" width="240" height="224"/>
+  <object id="30" x="62" y="322" width="128" height="111"/>
+  <object id="31" x="988" y="475" width="119" height="123"/>
+  <object id="32" x="1215" y="500" width="160" height="121"/>
+  <object id="33" x="1211" y="-2" width="195" height="462"/>
+  <object id="34" x="1341" y="467" width="60" height="28"/>
+  <object id="35" x="962" y="657" width="163" height="121"/>
+  <object id="36" x="1213" y="655" width="172" height="125"/>
+  <object id="37" x="423" y="499" width="116" height="298"/>
+  <object id="38" x="846" y="400" width="103" height="289"/>
+  <object id="39" x="536" y="551" width="312" height="81"/>
+  <object id="40" x="539" y="684" width="284" height="116"/>
+  <object id="41" x="678" y="631" width="166" height="54"/>
+  <object id="42" x="880" y="696" width="80" height="101"/>
+  <object id="43" x="257" y="582" width="67" height="143"/>
+  <object id="44" x="379" y="574" width="43" height="118"/>
+  <object id="45" x="328" y="644" width="46" height="154"/>
+  <object id="46" x="1" y="574" width="186" height="52"/>
+  <object id="47" x="110" y="635" width="79" height="86"/>
+  <object id="48" x="10" y="686" width="109" height="108"/>
+  <object id="49" x="36" y="263" width="305" height="169"/>
+  <object id="50" x="338" y="275" width="175" height="155"/>
+  <object id="51" x="961" y="4" width="157" height="463"/>
+  <object id="52" x="244" y="4" width="419" height="55"/>
+  <object id="53" x="323" y="62" width="191" height="27"/>
+  <object id="55" x="587" y="62" width="209" height="60"/>
+  <object id="56" x="865" y="2" width="89" height="122"/>
+  <object id="57" x="898" y="129" width="61" height="120"/>
+  <object id="58" x="318" y="195" width="576" height="24"/>
+  <object id="59" x="738" y="225" width="155" height="25"/>
+  <object id="60" x="838" y="351" width="114" height="22"/>
+  <object id="61" x="802" y="384" width="35" height="165"/>
+  <object id="62" x="545" y="494" width="36" height="49"/>
+  <object id="63" x="770" y="1" width="25" height="64"/>
+  <object id="64" x="801" y="0" width="28" height="31"/>
+  <object id="65" x="1121" y="3" width="30" height="53"/>
+  <object id="66" x="844" y="285" width="114" height="36"/>
+  <object id="67" x="36" y="438" width="49" height="128"/>
+  <object id="68" x="95" y="544" width="92" height="22"/>
+  <object id="69" x="389" y="542" width="23" height="20"/>
  </objectgroup>
  <objectgroup id="2" name="friends">
   <object id="1" x="113.187" y="427.255" width="28.0283" height="43.6442"/>

@@ -42,3 +42,11 @@ class RemoveFood extends FoodNumberEvent {
     );
   }
 }
+
+class RemoveTotalFood extends FoodNumberEvent {
+  const RemoveTotalFood();
+}
+
+class RemoveALLFood extends FoodNumberEvent {
+  const RemoveALLFood();
+}

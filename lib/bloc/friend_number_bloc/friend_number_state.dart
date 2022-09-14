@@ -8,16 +8,18 @@ enum FriendState {
 
 class FriendNumberState {
   final int findFriendNumber;
+  final List<int> maxFriendNumber;
   final FriendState friendState;
 
   const FriendNumberState({
     required this.findFriendNumber,
     required this.friendState,
+    required this.maxFriendNumber,
   });
 
   factory FriendNumberState.initial() {
     return const FriendNumberState(
-        findFriendNumber: 0, friendState: FriendState.init);
+        findFriendNumber: 0, friendState: FriendState.init,maxFriendNumber: []);
   }
 
   @override
@@ -25,10 +27,12 @@ class FriendNumberState {
 
   FriendNumberState copyWith({
     int? findFriendNumber,
+    List<int>? maxFriendNumber,
     FriendState? friendState,
   }) {
     return FriendNumberState(
       findFriendNumber: findFriendNumber ?? this.findFriendNumber,
+      maxFriendNumber: maxFriendNumber ?? this.maxFriendNumber,
       friendState: friendState ?? this.friendState,
     );
   }
