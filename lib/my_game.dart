@@ -8,6 +8,7 @@ import 'package:flame_audio/flame_audio.dart';
 import 'package:flame_bloc/flame_bloc.dart';
 import 'package:flame_tiled/flame_tiled.dart';
 import 'package:flame/extensions.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:testtesttest/bloc/food_number_bloc/food_number_bloc.dart';
@@ -147,7 +148,7 @@ class MyGame extends FlameGame with HasCollisionDetection, TapDetector {
       georgePositionBloc: georgePositionBloc,
     )
       ..position = Vector2(529, 128)
-      ..debugMode = true
+      ..debugMode = kReleaseMode ? false : true
       ..size = Vector2.all(characterSize);
     add(george);
 
