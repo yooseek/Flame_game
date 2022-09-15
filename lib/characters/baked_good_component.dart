@@ -27,7 +27,7 @@ class BakedGoodComponent extends SpriteComponent
       }
     }
 
-    gameRef.yummy.start();
+    gameRef.yummy.start(volume: 5.0);
     gameRef.remove(this);
   }
 }

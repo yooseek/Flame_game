@@ -1,4 +1,5 @@
 import 'package:flame_tiled/flame_tiled.dart';
+import 'package:flutter/foundation.dart';
 import 'package:testtesttest/characters/baked_good_component.dart';
 import 'package:flame/components.dart';
 import 'package:testtesttest/my_game.dart';
@@ -23,7 +24,7 @@ void addBakedGoods(TiledComponent homeMap, MyGame game) async {
         ..sprite = await game.loadSprite('$imgName.png')
         ..width = bakedGood.width
         ..height = bakedGood.height
-        ..debugMode = true;
+        ..debugMode = kReleaseMode ? false : true;
 
       game.componentList.add(bakedGoodComponent);
 

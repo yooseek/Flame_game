@@ -5,6 +5,7 @@ import 'package:testtesttest/bloc/food_number_bloc/food_number_bloc.dart';
 import 'package:testtesttest/bloc/friend_number_bloc/friend_number_bloc.dart';
 import 'package:testtesttest/model/food_inventory_model.dart';
 import 'package:testtesttest/my_game.dart';
+import 'package:testtesttest/overlays/arrow_overlay.dart';
 import 'package:testtesttest/overlays/dialog_overlay.dart';
 
 class OverlayController extends StatelessWidget {
@@ -26,13 +27,20 @@ class OverlayController extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        AudioOverlay(game: game),
+        Row(children: [
+          AudioOverlay(game: game),
+          Expanded(
+            child: DialogOverlay(game: game),
+          ),
+        ]),
         Padding(
           padding: const EdgeInsets.all(16.0),
           child: Row(
             children: [
               ScoreOverlay(friendNum: friendNum, totalFoodNum: totalFoodNum),
-              Expanded(child: DialogOverlay(game: game),),
+              Expanded(
+                child: ArrowOverlay(game: game),
+              ),
             ],
           ),
         ),
@@ -130,14 +138,14 @@ class AudioOverlay extends StatelessWidget {
         const SizedBox(
           width: 10,
         ),
-        Text(
-          game.soundTrackName,
-          style: TextStyle(
-            fontSize: 21.0,
-            fontWeight: FontWeight.w500,
-            color: Colors.pink.shade200,
-          ),
-        ),
+        // Text(
+        //   game.soundTrackName,
+        //   style: TextStyle(
+        //     fontSize: 21.0,
+        //     fontWeight: FontWeight.w500,
+        //     color: Colors.pink.shade200,
+        //   ),
+        // ),
       ],
     );
   }

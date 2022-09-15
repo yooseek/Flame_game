@@ -27,7 +27,7 @@ const RESOURCES = {
 "assets/assets/images/village.gif": "2172cce49deca4c5f214593a456c7843",
 "assets/assets/json/test.json": "0d6637e7c17870c52a56c396df61b82f",
 "assets/assets/rive/rive_one.riv": "da47a8774312008febc0f08fdc6a89a7",
-"assets/assets/tiles/map.tmx": "ec9298c38e26123ae8bc52bab1ab7a66",
+"assets/assets/tiles/map.tmx": "74c1010b6a46dc65a1ecc1614628d471",
 "assets/assets/translations/en-US.json": "4c7fc88210c167ccd0c5bc9490272844",
 "assets/assets/translations/ko-KR.json": "ca4fc29eacbf475cc98b191d2686e3a7",
 "assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
@@ -49,9 +49,9 @@ const RESOURCES = {
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
 "icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
-"index.html": "e21fba7a0f82765a34cb1f062da544c7",
-"/": "e21fba7a0f82765a34cb1f062da544c7",
-"main.dart.js": "501c0109b5fa3bf676a0c953a581e2ce",
+"index.html": "756eb990c53c1cc9fbc842d1f1cae4a4",
+"/": "756eb990c53c1cc9fbc842d1f1cae4a4",
+"main.dart.js": "907f31864512fd99dbcdae53d2a82078",
 "manifest.json": "d5c0dd0598bdf709663626c8c571d3d2",
 "version.json": "e4e45becc69e6d2b0b9ee8f92e973a61"
 };

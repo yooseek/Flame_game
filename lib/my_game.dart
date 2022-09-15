@@ -1,10 +1,14 @@
+import 'dart:ui';
+
 import 'package:flame/components.dart';
 import 'package:flame/game.dart';
 import 'package:flame/input.dart';
 import 'package:flame_audio/audio_pool.dart';
 import 'package:flame_audio/flame_audio.dart';
+import 'package:flame_bloc/flame_bloc.dart';
 import 'package:flame_tiled/flame_tiled.dart';
 import 'package:flame/extensions.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:testtesttest/bloc/food_number_bloc/food_number_bloc.dart';
 import 'package:testtesttest/bloc/friend_number_bloc/friend_number_bloc.dart';
@@ -52,6 +56,30 @@ class MyGame extends FlameGame with HasCollisionDetection, TapDetector {
   Future<void> onLoad() async {
     super.onLoad();
 
+    // 키보드 처리 활성화
+    window.onKeyData = (final keyData) {
+      if(keyData.type.name.toString() == 'down' || keyData.type.name.toString() == 'up') {
+        if(keyData.physical == 0x70052) {
+          direction = 3;
+        }else if(keyData.physical == 0x7004f){
+          direction = 4;
+        }else if(keyData.physical == 0x70051){
+          direction = 1;
+        }else if(keyData.physical == 0x70050){
+          direction = 2;
+        }else {
+          direction = 0;
+        }
+      }else{
+        direction = 0;
+      }
+
+      if (keyData.logical == LogicalKeyboardKey.escape.keyId) {
+        return true;
+      }
+      return false;
+    };
+
     // 배경
     // 각각의 타일은 16 px이다.
     homeMap = await TiledComponent.load('map.tmx', Vector2.all(16));
@@ -91,9 +119,9 @@ class MyGame extends FlameGame with HasCollisionDetection, TapDetector {
 
     // 텍스트 박스
     dialogBox = DialogBox(
-        text: '안녕 내 이름은 조지! \n'
-            '만나서 반가워! \n'
-            '같이 친구를 찾아보자!',
+        text: '안녕 내 이름은 조지, '
+            '만나서 반가워! '
+            '나랑 같이 친구들을 찾아보자!',
         game: this,
         georgePositionBloc: georgePositionBloc);
     // add(dialogBox);
@@ -109,12 +137,14 @@ class MyGame extends FlameGame with HasCollisionDetection, TapDetector {
     // 음악
     FlameAudio.bgm.initialize();
     FlameAudio.audioCache.load('sfx/ukulele.mp3');
+    FlameAudio.bgm.play('sfx/ukulele.mp3');
 
     // 조지 등장
     george = GeorgeComponent(
       game: this,
       size: Vector2.all(characterSize),
       notiOverlayBloc: notiOverlayBloc,
+      georgePositionBloc: georgePositionBloc,
     )
       ..position = Vector2(529, 128)
       ..debugMode = true
@@ -153,10 +183,6 @@ class MyGame extends FlameGame with HasCollisionDetection, TapDetector {
 
   @override
   void onTapUp(TapUpInfo info) {
-    direction += 1;
-    if (direction > 4) {
-      direction = 0;
-    }
   }
 
   void newScene() async {
@@ -180,6 +206,7 @@ class MyGame extends FlameGame with HasCollisionDetection, TapDetector {
       game: this,
       size: Vector2.all(characterSize),
       notiOverlayBloc: notiOverlayBloc,
+      georgePositionBloc: georgePositionBloc,
     )
       ..position = Vector2(300, 128)
       ..debugMode = true

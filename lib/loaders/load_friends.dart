@@ -1,5 +1,6 @@
 import 'package:flame/components.dart';
 import 'package:flame_tiled/flame_tiled.dart';
+import 'package:flutter/foundation.dart';
 import 'package:testtesttest/bloc/food_number_bloc/food_number_bloc.dart';
 import 'package:testtesttest/bloc/friend_number_bloc/friend_number_bloc.dart';
 import 'package:testtesttest/bloc/george_position_bloc/george_position_bloc.dart';
@@ -28,9 +29,8 @@ void loadFriends({
       ..position = Vector2(friendBox.x, friendBox.y)
       ..width = friendBox.width
       ..height = friendBox.height
-      ..debugMode = true;
+      ..debugMode = kReleaseMode ? false : true;
 
-    print('친구가 생성되었습니다 ${friendBox.id}');
     game.componentList.add(friend);
     friendNumberBloc.add(AddFriend(id: friendBox.id));
     game.add(friend);

@@ -1,5 +1,6 @@
 import 'package:flame/components.dart';
 import 'package:flame_tiled/flame_tiled.dart';
+import 'package:flutter/foundation.dart';
 import 'package:testtesttest/bloc/food_number_bloc/food_number_bloc.dart';
 import 'package:testtesttest/bloc/friend_number_bloc/friend_number_bloc.dart';
 import 'package:testtesttest/characters/obstacle_component.dart';
@@ -25,7 +26,7 @@ void loadObstacles({
       ..position = Vector2(obstacleBox.x, obstacleBox.y)
       ..width = obstacleBox.width
       ..height = obstacleBox.height
-      ..debugMode = true;
+      ..debugMode = kReleaseMode ? false : true;
 
     game.componentList.add(obstacle);
     game.add(obstacle);

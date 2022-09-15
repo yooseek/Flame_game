@@ -3,9 +3,8 @@ import 'package:flame/palette.dart';
 import 'package:flutter/widgets.dart';
 import 'package:testtesttest/bloc/george_position_bloc/george_position_bloc.dart';
 import 'package:testtesttest/my_game.dart';
-import 'package:flame/flame.dart';
 
-class DialogBox extends TextBoxComponent {
+class DialogBox extends TextBoxComponent{
   final MyGame game;
   final GeorgePositionBloc georgePositionBloc;
 
@@ -30,6 +29,7 @@ class DialogBox extends TextBoxComponent {
                 wordSpacing: 100.0,
               ),
             )) {
+
     anchor = Anchor.bottomRight;
   }
 
@@ -52,7 +52,7 @@ class DialogBox extends TextBoxComponent {
   void update(double dt) {
     super.update(dt);
     if (finished) {
-      game.remove(this);
+      removeFromParent();
     }
   }
 }

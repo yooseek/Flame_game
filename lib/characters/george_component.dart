@@ -2,6 +2,7 @@ import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:flame/sprite.dart';
 import 'package:flame/game.dart';
+import 'package:testtesttest/bloc/george_position_bloc/george_position_bloc.dart';
 import 'package:testtesttest/bloc/noti_overlay_bloc/noti_overlay_bloc.dart';
 import 'package:testtesttest/my_game.dart';
 
@@ -9,6 +10,7 @@ class GeorgeComponent extends SpriteAnimationComponent
     with CollisionCallbacks, HasGameRef {
   final MyGame game;
   final NotiOverlayBloc notiOverlayBloc;
+  final GeorgePositionBloc georgePositionBloc;
 
   SpriteAnimation get initAnimation => idleAnimation;
 
@@ -24,6 +26,7 @@ class GeorgeComponent extends SpriteAnimationComponent
     required this.game,
     required Vector2 size,
     required this.notiOverlayBloc,
+    required this.georgePositionBloc,
   }) {
     add(RectangleHitbox.relative(Vector2.all(0.5), parentSize: size));
   }
@@ -54,6 +57,11 @@ class GeorgeComponent extends SpriteAnimationComponent
   @override
   void update(double dt) {
     super.update(dt);
+
+    // 자기자신 포지션 업데이트
+    if(dt.toInt() % 3 == 0) {
+      georgePositionBloc.add(ChangeGeorgePosition(position: position));
+    }
 
     if (!notiOverlayBloc.state.showNoti) {
       // 움직임 애니메이션 적용

@@ -10,9 +10,9 @@ class NotiOverlayState {
   });
 
   factory NotiOverlayState.initial() {
-    return NotiOverlayState(showNoti: true, message: '안녕 내 이름은 조지! '
-        '만나서 반가워! '
-        '같이 친구를 찾아보자!');
+    return NotiOverlayState(showNoti: true, message: '안녕 내 이름은 조지, '
+        '만나서 반가워! \n'
+        '나랑 같이 친구들을 찾아보자!');
   }
 
   NotiOverlayState copyWith({

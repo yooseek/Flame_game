@@ -29,6 +29,7 @@ void main() async {
   //   startLocale: const Locale('ko', 'KR'),
   //   child: const MyApp()
   // ));
+
   runApp(const MyApp());
 }
 
